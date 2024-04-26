@@ -159,6 +159,11 @@ class _PersonScreenState extends State<PersonScreen> {
                     providerr!.updateImagePath(null);
                     providerr!.addContact(pm);
                     providerw!.dashIndex;
+                    txtName.clear();
+                    txtChat.clear();
+                    txtPhone.clear();
+                    txtDate.clear();
+                    txtTime.clear();
                   }
                 },
                 child: const Text('Save'),
