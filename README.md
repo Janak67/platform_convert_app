@@ -19,8 +19,8 @@ samples, guidance on mobile development, and a full API reference.
 Screenshots : 
 
 <p>
-  <img src = "https://github.com/Janak67/platform_convert_app/assets/141834407/8f9f8623-2647-4e50-87d0-1c8d42cca356" height="410" width="210">
-  <img src = "https://github.com/Janak67/platform_convert_app/assets/141834407/055c882f-ab71-4047-a6c6-f06fdc4cd8f0" height="410" width="210">
+  <img src = "https://github.com/Janak67/platform_convert_app/assets/141834407/8f9f8623-2647-4e50-87d0-1c8d42cca356" height="420" width="210">
+  <img src = "https://github.com/Janak67/platform_convert_app/assets/141834407/055c882f-ab71-4047-a6c6-f06fdc4cd8f0" height="420" width="210">
   <img src = "https://github.com/Janak67/platform_convert_app/assets/141834407/05564f50-ce69-4ebb-9fbb-e53b745d0091" height="410" width="210">
   <img src = "https://github.com/Janak67/platform_convert_app/assets/141834407/d53bd392-725e-4309-bfb5-d565ba0ee2d3" height="410" width="210">
   <img src = "https://github.com/Janak67/platform_convert_app/assets/141834407/c4b87256-543c-47c0-9951-0ad7eb407856" height="410" width="210">
