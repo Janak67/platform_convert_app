@@ -45,7 +45,7 @@ class _SettingScreenState extends State<SettingScreen> {
               ),
             ),
             SizedBox(height: h * 0.01),
-            (providerr!.profileSwitch == true)
+            (providerr!.isShow == true)
                 ? Column(
                     children: [
                       GestureDetector(
@@ -53,7 +53,7 @@ class _SettingScreenState extends State<SettingScreen> {
                           showBottomWidget(context);
                         },
                         child: CircleAvatar(
-                          radius: h * 0.085,
+                          radius: h * 0.075,
                           foregroundImage: providerr!.path != null
                               ? FileImage(File(providerr!.path!))
                               : null,
@@ -105,9 +105,10 @@ class _SettingScreenState extends State<SettingScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              ElevatedButton(
+                              OutlinedButton(
                                 onPressed: () {
-                                  if (formKey1.currentState!.validate()) {
+                                  if (formKey1.currentState?.validate() ??
+                                      false) {
                                     formKey1.currentState!.save();
                                   }
                                 },
@@ -116,7 +117,7 @@ class _SettingScreenState extends State<SettingScreen> {
                                   style: TextStyle(color: Colors.deepPurple),
                                 ),
                               ),
-                              ElevatedButton(
+                              OutlinedButton(
                                 onPressed: () {
                                   txtProfileName.clear();
                                   txtProfileBio.clear();

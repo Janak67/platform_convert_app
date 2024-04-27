@@ -30,7 +30,7 @@ class _CallScreenState extends State<CallScreen> {
             height: MediaQuery.sizeOf(context).height * 0.1,
             width: MediaQuery.sizeOf(context).width * 0.1,
             decoration: BoxDecoration(
-              color: Colors.grey.shade200,
+              color: ([...Colors.primaries]..shuffle()).first.shade50,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Row(

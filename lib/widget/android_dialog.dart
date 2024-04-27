@@ -100,7 +100,7 @@ void showWidget(BuildContext context, PersonModel p1) {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ElevatedButton(
+                  OutlinedButton(
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         PersonModel c1 = PersonModel();
@@ -114,7 +114,7 @@ void showWidget(BuildContext context, PersonModel p1) {
                     },
                     child: const Text("Update"),
                   ),
-                  ElevatedButton(
+                  OutlinedButton(
                     onPressed: () {
                       context.read<PersonProvider>().contactDelete();
                     },

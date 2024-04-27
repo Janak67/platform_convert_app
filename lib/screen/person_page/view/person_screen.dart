@@ -44,7 +44,7 @@ class _PersonScreenState extends State<PersonScreen> {
                         showBottom(context);
                       },
                       child: CircleAvatar(
-                        radius: h * 0.085,
+                        radius: h * 0.075,
                         foregroundImage: value.path != null
                             ? FileImage(File(value.path!))
                             : null,
@@ -89,18 +89,11 @@ class _PersonScreenState extends State<PersonScreen> {
                     ),
                     SizedBox(height: h * 0.02),
                     TextFormField(
-                      decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.message_outlined),
-                          hintText: 'Chat Conversation'),
-                      controller: txtChat,
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          return 'Required your Chat';
-                        }
-                        return null;
-                      },
-                    ),
+                        decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.message_outlined),
+                            hintText: 'Chat Conversation'),
+                        controller: txtChat),
                   ],
                 ),
               ),
@@ -132,9 +125,7 @@ class _PersonScreenState extends State<PersonScreen> {
                   IconButton(
                     onPressed: () async {
                       TimeOfDay? d2 = await showTimePicker(
-                        context: context,
-                        initialTime: providerr!.time!,
-                      );
+                          context: context, initialTime: providerr!.time!);
                       providerr!.changeTime(d2!);
                     },
                     icon: Icon(Icons.watch_later_outlined, size: h * 0.03),
