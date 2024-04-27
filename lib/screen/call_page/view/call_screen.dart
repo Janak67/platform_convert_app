@@ -103,6 +103,14 @@ class _CallScreenState extends State<CallScreen> {
                 IconButton(
                   onPressed: () async {
                     Uri uri = Uri.parse(
+                        "sms: +91${providerr!.addPersonList[index].phone}");
+                    await launchUrl(uri);
+                  },
+                  icon: const Icon(Icons.message, color: Colors.blue),
+                ),
+                IconButton(
+                  onPressed: () async {
+                    Uri uri = Uri.parse(
                         "tel: +91${providerr!.addPersonList[index].phone}");
                     await launchUrl(uri);
                   },
