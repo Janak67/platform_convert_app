@@ -33,90 +33,93 @@ class _CallScreenState extends State<CallScreen> {
               color: ([...Colors.primaries]..shuffle()).first.shade50,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Row(
-              children: [
-                providerw!.addPersonList[index].imagePath != null
-                    ? InkWell(
-                        onTap: () {
-                          PersonModel p1 = PersonModel(
-                            imagePath:
-                                providerr!.addPersonList[index].imagePath,
-                            name: providerr!.addPersonList[index].name,
-                            phone: providerr!.addPersonList[index].phone,
-                          );
-                          providerr!.storeIndex(index);
-                          showWidget(context, p1);
-                        },
-                        child: CircleAvatar(
-                          radius: 25,
-                          backgroundImage: FileImage(
-                            File(
-                                "${providerw!.addPersonList[index].imagePath}"),
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                children: [
+                  providerw!.addPersonList[index].imagePath != null
+                      ? InkWell(
+                          onTap: () {
+                            PersonModel p1 = PersonModel(
+                              imagePath:
+                                  providerr!.addPersonList[index].imagePath,
+                              name: providerr!.addPersonList[index].name,
+                              phone: providerr!.addPersonList[index].phone,
+                            );
+                            providerr!.storeIndex(index);
+                            showWidget(context, p1);
+                          },
+                          child: CircleAvatar(
+                            radius: 25,
+                            backgroundImage: FileImage(
+                              File(
+                                  "${providerw!.addPersonList[index].imagePath}"),
+                            ),
                           ),
-                        ),
-                      )
-                    : InkWell(
-                        onTap: () {
-                          PersonModel p1 = PersonModel(
-                            imagePath:
-                                providerr!.addPersonList[index].imagePath,
-                            name: providerr!.addPersonList[index].name,
-                            phone: providerr!.addPersonList[index].phone,
-                          );
-                          providerr!.storeIndex(index);
-                          showWidget(context, p1);
-                        },
-                        child: Container(
-                          height: MediaQuery.sizeOf(context).height * 0.18,
-                          width: MediaQuery.sizeOf(context).width * 0.2,
-                          decoration:
-                              const BoxDecoration(shape: BoxShape.circle),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text(
-                              "${providerw!.addPersonList[index].name!.isNotEmpty ? providerw!.addPersonList[index].name!.substring(0, 1).toUpperCase() : 0}",
-                              style: const TextStyle(
-                                  color: Colors.black, fontSize: 20),
+                        )
+                      : InkWell(
+                          onTap: () {
+                            PersonModel p1 = PersonModel(
+                              imagePath:
+                                  providerr!.addPersonList[index].imagePath,
+                              name: providerr!.addPersonList[index].name,
+                              phone: providerr!.addPersonList[index].phone,
+                            );
+                            providerr!.storeIndex(index);
+                            showWidget(context, p1);
+                          },
+                          child: Container(
+                            height: MediaQuery.sizeOf(context).height * 0.18,
+                            width: MediaQuery.sizeOf(context).width * 0.2,
+                            decoration:
+                                const BoxDecoration(shape: BoxShape.circle),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "${providerw!.addPersonList[index].name!.isNotEmpty ? providerw!.addPersonList[index].name!.substring(0, 1).toUpperCase() : 0}",
+                                style: const TextStyle(
+                                    color: Colors.black, fontSize: 20),
+                              ),
                             ),
                           ),
                         ),
+                  const SizedBox(width: 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '${providerr!.addPersonList[index].name}',
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold),
                       ),
-                const SizedBox(width: 20),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      '${providerr!.addPersonList[index].name}',
-                      style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      '${providerw!.addPersonList[index].phone}',
-                      style: const TextStyle(color: Colors.black, fontSize: 15),
-                    ),
-                  ],
-                ),
-                const Spacer(),
-                IconButton(
-                  onPressed: () async {
-                    Uri uri = Uri.parse(
-                        "sms: +91${providerr!.addPersonList[index].phone}");
-                    await launchUrl(uri);
-                  },
-                  icon: const Icon(Icons.message, color: Colors.blue),
-                ),
-                IconButton(
-                  onPressed: () async {
-                    Uri uri = Uri.parse(
-                        "tel: +91${providerr!.addPersonList[index].phone}");
-                    await launchUrl(uri);
-                  },
-                  icon: const Icon(Icons.call, color: Colors.green),
-                ),
-              ],
+                      Text(
+                        '${providerw!.addPersonList[index].phone}',
+                        style: const TextStyle(color: Colors.black, fontSize: 15),
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  IconButton(
+                    onPressed: () async {
+                      Uri uri = Uri.parse(
+                          "sms: +91${providerr!.addPersonList[index].phone}");
+                      await launchUrl(uri);
+                    },
+                    icon: const Icon(Icons.message, color: Colors.blue),
+                  ),
+                  IconButton(
+                    onPressed: () async {
+                      Uri uri = Uri.parse(
+                          "tel: +91${providerr!.addPersonList[index].phone}");
+                      await launchUrl(uri);
+                    },
+                    icon: const Icon(Icons.call, color: Colors.green),
+                  ),
+                ],
+              ),
             ),
           );
         },
