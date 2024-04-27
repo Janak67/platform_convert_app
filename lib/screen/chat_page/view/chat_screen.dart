@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:platform_convert_app/screen/person_page/model/person_model.dart';
 import 'package:platform_convert_app/screen/person_page/provider/person_provider.dart';

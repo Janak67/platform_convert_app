@@ -13,7 +13,7 @@ void showBottom(BuildContext context) {
     context: context,
     builder: (context) {
       return Container(
-        height: h * 0.2,
+        height: h * 0.12,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(w * 0.08),
@@ -42,14 +42,14 @@ void showBottom(BuildContext context) {
                         Navigator.pop(context);
                       },
                       icon: Icon(Icons.camera_alt_outlined,
-                          size: w * 0.20, color: Colors.black),
+                          size: w * 0.1, color: Colors.black),
                     ),
                     Text(
                       'Camera',
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: w * 0.04),
+                          fontSize: w * 0.03),
                     ),
                   ],
                 ),
@@ -64,14 +64,14 @@ void showBottom(BuildContext context) {
                         Navigator.pop(context);
                       },
                       icon: Icon(Icons.photo_camera_back_outlined,
-                          size: w * 0.2, color: Colors.black),
+                          size: w * 0.1, color: Colors.black),
                     ),
                     Text(
                       'Gallery',
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: w * 0.04),
+                          fontSize: w * 0.03),
                     ),
                   ],
                 ),

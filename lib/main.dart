@@ -4,7 +4,8 @@ import 'package:platform_convert_app/screen/home/provider/home_provider.dart';
 import 'package:platform_convert_app/screen/person_page/provider/person_provider.dart';
 import 'package:platform_convert_app/screen/setting_page/provider/setting_provider.dart';
 import 'package:platform_convert_app/utils/app_routes.dart';
-import 'package:platform_convert_app/utils/app_theme.dart';
+import 'package:platform_convert_app/utils/theme/android_theme.dart';
+import 'package:platform_convert_app/utils/theme/ios_theme.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -32,7 +33,8 @@ void main() {
               : CupertinoApp(
                   debugShowCheckedModeBanner: false,
                   routes: screen_routes_ios,
-                );
+                  theme:
+                      value.isLight ? lightCupertinoTheme : darkCupertinoTheme);
         },
       ),
     ),

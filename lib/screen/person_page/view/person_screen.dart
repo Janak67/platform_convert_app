@@ -36,23 +36,19 @@ class _PersonScreenState extends State<PersonScreen> {
           child: Column(
             children: [
               SizedBox(height: h * 0.01),
-              Stack(
-                children: [
-                  Consumer<PersonProvider>(
-                    builder: (context, value, child) => InkWell(
-                      onTap: () {
-                        showBottom(context);
-                      },
-                      child: CircleAvatar(
-                        radius: h * 0.075,
-                        foregroundImage: value.path != null
-                            ? FileImage(File(value.path!))
-                            : null,
-                        child: Icon(Icons.add_a_photo_outlined, size: w * 0.1),
-                      ),
-                    ),
+              Consumer<PersonProvider>(
+                builder: (context, value, child) => InkWell(
+                  onTap: () {
+                    showBottom(context);
+                  },
+                  child: CircleAvatar(
+                    radius: h * 0.075,
+                    foregroundImage: value.path != null
+                        ? FileImage(File(value.path!))
+                        : null,
+                    child: Icon(Icons.add_a_photo_outlined, size: w * 0.1),
                   ),
-                ],
+                ),
               ),
               SizedBox(height: h * 0.04),
               Form(
@@ -153,8 +149,6 @@ class _PersonScreenState extends State<PersonScreen> {
                     txtName.clear();
                     txtChat.clear();
                     txtPhone.clear();
-                    txtDate.clear();
-                    txtTime.clear();
                   }
                 },
                 child: const Text('Save'),

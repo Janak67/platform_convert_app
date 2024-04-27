@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:platform_convert_app/screen/setting_page/provider/setting_provider.dart';
 import 'package:platform_convert_app/utils/share_helper.dart';
-import 'package:platform_convert_app/widget/bottom_sheet_setting.dart';
+import 'package:platform_convert_app/widget/show_bottom_sheet.dart';
 import 'package:provider/provider.dart';
 
 class SettingScreen extends StatefulWidget {
@@ -50,10 +50,10 @@ class _SettingScreenState extends State<SettingScreen> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          showBottomWidget(context);
+                          showBottom(context);
                         },
                         child: CircleAvatar(
-                          radius: h * 0.075,
+                          radius: h * 0.07,
                           foregroundImage: providerr!.path != null
                               ? FileImage(File(providerr!.path!))
                               : null,
@@ -137,10 +137,7 @@ class _SettingScreenState extends State<SettingScreen> {
             const Divider(),
             SizedBox(height: h * 0.01),
             ListTile(
-              leading: const Icon(
-                Icons.light_mode_outlined,
-                size: 30,
-              ),
+              leading: const Icon(Icons.light_mode_outlined, size: 30),
               title: const Text(
                 'Theme',
                 style: TextStyle(fontWeight: FontWeight.bold),

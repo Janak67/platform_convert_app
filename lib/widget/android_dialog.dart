@@ -44,17 +44,18 @@ void showWidget(BuildContext context, PersonModel p1) {
                                 },
                                 child: const Text("Choose Photo")),
                             TextButton(
-                                onPressed: () async {
-                                  ImagePicker picker = ImagePicker();
-                                  XFile? image = await picker.pickImage(
-                                      source: ImageSource.camera);
-                                  // ignore: use_build_context_synchronously
-                                  context
-                                      .read<PersonProvider>()
-                                      .updateImagePath(image!.path);
-                                  Navigator.pop(context);
-                                },
-                                child: const Text("Take Photo")),
+                              onPressed: () async {
+                                ImagePicker picker = ImagePicker();
+                                XFile? image = await picker.pickImage(
+                                    source: ImageSource.camera);
+                                // ignore: use_build_context_synchronously
+                                context
+                                    .read<PersonProvider>()
+                                    .updateImagePath(image!.path);
+                                Navigator.pop(context);
+                              },
+                              child: const Text("Take Photo"),
+                            ),
                           ],
                         );
                       },
@@ -68,10 +69,8 @@ void showWidget(BuildContext context, PersonModel p1) {
                         )
                       : CircleAvatar(
                           radius: 80,
-                          child: Text(
-                            p1.name!.substring(0, 1).toUpperCase(),
-                            style: Theme.of(context).textTheme.titleLarge,
-                          ),
+                          child: Text(p1.name!.substring(0, 1).toUpperCase(),
+                              style: Theme.of(context).textTheme.titleLarge),
                         ),
                 ),
               ),

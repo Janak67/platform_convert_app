@@ -106,10 +106,7 @@ class _CallScreenState extends State<CallScreen> {
                         "tel: +91${providerr!.addPersonList[index].phone}");
                     await launchUrl(uri);
                   },
-                  icon: const Icon(
-                    Icons.call,
-                    color: Colors.green,
-                  ),
+                  icon: const Icon(Icons.call, color: Colors.green),
                 ),
               ],
             ),

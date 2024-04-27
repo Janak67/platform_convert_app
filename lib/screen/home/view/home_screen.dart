@@ -4,7 +4,6 @@ import 'package:platform_convert_app/screen/chat_page/view/chat_screen.dart';
 import 'package:platform_convert_app/screen/person_page/view/person_screen.dart';
 import 'package:platform_convert_app/screen/setting_page/view/setting_screen.dart';
 import 'package:provider/provider.dart';
-
 import '../provider/home_provider.dart';
 
 class HomeScreen extends StatefulWidget {
